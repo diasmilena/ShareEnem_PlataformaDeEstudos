@@ -1,0 +1,216 @@
+*{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(97, 39, 233);
+    background-image: linear-gradient(
+      270deg,
+      #6700e0,
+      rgb(0 0 0 / 82%)
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    position: relative;
+}
+.cadastro{
+    height: auto;
+}
+#content::before{
+    content: ' ';
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    width: 300px;
+    height: 50%;
+    background: linear-gradient(rgb(202, 81, 81), rgb(95, 22, 190));
+    clip-path: circle(150px);
+    
+}
+#content::after{
+    content: ' ';
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    width: 300px;
+    height: 50%;
+    background: linear-gradient(rgb(202, 81, 81), rgb(95, 22, 190));
+    clip-path: circle(150px);
+}
+.fa-chevron-left{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 2em;
+    color: white;
+    text-decoration: none;
+}
+.fa-chevron-left:hover{
+   color: #37af65;
+}
+
+header{
+    z-index: 1;
+}
+h1{
+    margin-bottom: 10px;
+    line-height: 90px;
+    text-align: center;
+}
+
+.div_erro{
+    display: none;
+    background-color: #d40a0a;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+#existe{
+    margin-top: 20px;
+    background-color: #0a68d4;
+}
+
+#erro{
+    margin-top: 20px;
+    background-color: #d40a0a;
+}
+.conteudo{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cadastre_se{
+    text-align: center;
+    padding: 5px 0 25px 0;
+    font-size: 0.95em;
+    z-index: 1;
+}
+.cadastre_se a{
+    color: #1fd4a2;
+}
+.formulario{
+    width: 400px;
+    margin: 20px 0 0 0;
+    padding: 10px 30px 10px 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.048);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+.formulario label{
+    line-height: 40px;
+    text-align: center;
+}
+.formulario input{
+    line-height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgb(88, 88, 128);
+
+}
+.formulario span{
+    font-size: 0.80em;
+}
+#div-foto{
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 20px;
+}
+#imgFoto{
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    border: none;
+    width: 200px;
+    height: 150px;
+    object-fit: contain;
+}
+#file-name{
+    width: 200px;
+    overflow: hidden;
+    font-size: 0.70em;
+}
+#labelFoto{
+    width: 130px;
+    font-size: 0.70em;
+    text-overflow: clip;
+    margin-top: 24px;
+    cursor: pointer;
+    background-color: #03209c;
+    border-radius: 5px;
+    color: #fff;
+    padding: 1px 15px;
+}
+input[type='file'] {
+    display: none
+}
+#formulario_cadastro{
+    margin: 80px 0 0 0;
+}
+#formulario_cadastro label{
+    text-align: start;
+}
+#formulario_cadastro p{
+    text-align: center;
+}
+#formulario_cadastro p a{
+    color: #1fd4a2;
+}
+#cadastro_efetuado{
+    display: none;
+}
+#cadastro_efetuado a{
+    color: #00bb5c;
+}
+#descricaoperfil{
+    min-height: 50px;
+    resize: vertical;
+    padding: 0.625rem; 
+}
+#button_logar{
+    background-color: #37af65;
+    color:white;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    line-height: 40px;
+    cursor: pointer;
+    margin: 30px 0 15px 0;
+}
+#senhas_diferentes{
+    display: none;
+    color: #ff3737;
+    font-weight: 800;
+}
+
+
+@media screen and (max-width: 768px) {
+    .formulario{ 
+        width: 80%;
+        backdrop-filter: none;
+    }  
+    #content::before{
+        top: 290px;
+        left: -50px;
+        clip-path: circle(120px);
+    }
+    #content::after{
+    right: 10px;
+    clip-path: circle(120px);
+    
+    }
+}

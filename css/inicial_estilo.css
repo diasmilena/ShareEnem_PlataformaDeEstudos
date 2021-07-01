@@ -1,0 +1,1391 @@
+*{
+	margin: 0px;
+	padding: 0px;
+    font-family: 'Roboto Slab', serif;
+}
+nav{
+	width: 100%;
+	background-color: #ffffff;
+	box-shadow: 9px 0px 3px #80808087;
+    border-left: 1px solid #bdbdbd;
+	transition: 0.5s;
+    position: fixed;
+    z-index: 2;
+}
+nav ul{
+	display: flex;
+	justify-content: space-between;
+	width: 100%
+}
+nav ul div{
+	display: flex;
+}
+.itens-nav li{
+	list-style: none;
+	background-color: #ffffff9a;
+	display: flex;
+	align-items: center;
+}
+
+.itens-nav li .far{
+    color: #5d00a4;
+    font-size: 1.8em;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.itens-nav li .far:hover{
+    opacity: 0.7;
+}
+
+.itens-nav li img{
+	background-color: #ffffff9a;
+    height: 35px;
+    width: 35px;
+    padding: 5px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+nav ul div img:hover{
+	opacity: 0.7;
+}
+form {
+	padding: 0.3em;
+	background: none;
+	display: flex;
+}
+form input, form button {
+    font-size: 1em;
+    padding: 0.2em;
+	border-radius: 0.2em;
+	border: #00000029 solid 1px;
+}
+form button {
+    cursor: pointer;
+    background: none;
+	color: #b9b9b9;
+	border: none;
+}
+form button:hover {
+    background-color: whitesmoke;
+    color: blueviolet;
+}
+
+/*POPOVER*/
+#opcoes_perfil{
+	position: relative;
+}
+.content{
+	display: none;
+}
+.aparecer{
+	display: flex;
+	width: 150px;
+    background-color: #ffffff;
+    padding: 10px 0 0 0;
+    position: absolute;
+    top: 50px;
+    right: 10;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #00000038;
+    flex-direction: column;
+    z-index: 100;
+    font-size: 0.93em;
+}
+.content::before{
+	content: "";
+    border-style: solid;
+    border-width: 0px 10px 10px 10px;
+    border-color: transparent transparent #eee transparent;
+    position: absolute;
+    top: -10;
+    right: 10;
+}
+.content button{
+    font-size: 1em;
+    line-height: 2em;
+    border: none;
+    border-top: 1px solid #cccccc;
+    background-color: transparent;
+    cursor: pointer;
+}
+.content button:hover{
+	background-color: #00000021;
+}
+.content button a{
+    text-decoration: none;
+    color: black;
+}
+.content p{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/*CONTEUDO DA PÁGINA INCIAL*/
+#barraCima{
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    margin-left: 150px; 
+}
+#barraCima h5{
+    font-size: 1.10em;
+    border-bottom: 1px solid black;
+    width: 170px;
+    height: 20px;
+}
+#barraCima button{
+    text-decoration: none;
+    padding: 7px 15px 7px 15px;
+    display: block;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 4px;
+    color: #7209b7;
+    background-color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1em;
+    position: absolute;
+    right: 150;
+}
+#barraCima button:hover{
+    background-color: #7209b7;
+	color: white;
+    cursor: pointer;
+}
+.conteudo{
+	display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+	width: 100%;
+    position: relative;
+    z-index: 10;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 290px;
+    height: 300px;
+    margin: 2.5%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 3px rgb(0 0 0 / 18%);
+    cursor: pointer;
+    transition: 0.4s;
+    padding: 0 10px;
+    background-color: white;
+}
+.card .tituloSplited {
+    color: #0d0c42;
+    font-size: 10em;
+    line-height: 1em;
+    align-self: stretch;
+    height: 180px;
+    font-family: 'Train One', cursive;
+    text-align: center;
+    border-bottom: #0d0c4247 solid 1px;
+    border-top: #0d0c4245 solid 1px;
+}
+.card .card_titulo {
+	font-weight: bold;
+	color: #421e90;
+    text-align: center;
+}	
+.card:hover {
+	box-shadow: 5px 5px 20px 5px rgba(49, 49, 49, 0.24), 
+	-5px -5px 20px 5px rgba(54, 54, 54, 0.274);
+}
+.card p{
+    width: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+/*estilo elementos de carregamento*/
+.loadingGif{
+    height: inherit;
+    position: absolute;
+    display: none;
+}
+.loadingGif2{
+    position: absolute;
+    top: unset;
+    bottom: 20;
+    right: 20;
+    border: 2px solid #5e3183;
+    cursor: none;
+    pointer-events: none;
+    display: none;
+}
+.loadingGif2 img{
+    height: 85px;
+    padding: 1px;
+}
+.progress{
+    width: 100%;
+    height: 6px;
+    background: #e1e4e8;
+    border-radius: 3px;
+    overflow: hidden;
+    position: absolute;
+    top: 45;
+}  
+.progress-bar{
+    display: block;
+    height: 100%;
+    width: 2%;
+    background: linear-gradient(90deg,#ffd33d,#ea4aaa 17%,#b34bff 34%,#01feff 51%,#ffd33d 68%,#ea4aaa 85%,#b34bff);
+    background-size: 300% 100%;
+    transition: width 0.2s linear;
+    animation: progress-animation 2s linear infinite;
+}
+@keyframes progress-animation{
+    from {background-position: 100%;}
+    to {background-position: 0;}
+}
+
+
+/*ESTILO DO SIDE MENU DOS CONTATOS*/
+.sidenav {
+    height: 100%;
+    width: 0; /*muda com js */
+    position: fixed; 
+    z-index: 11;
+    top: 0; 
+    left: 0;
+    background-color: #121d27;
+    overflow-y: auto; 
+    overflow-x: hidden;
+    padding-top: 10px; 
+    transition: 0.5s; 
+    color: white;
+    box-shadow: 2px 1px 18px 0px #0000008a;
+}
+
+/* as coisas q tem dentro do menu dos contatos: */
+.sidenav h3{
+    margin: 20px 10px 10px 10px;
+    font-weight: 100;
+}
+.sidenav p {
+    padding: 8px 8px 8px 2px;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    margin: 15px 0px 10px 10px;
+    cursor: pointer;
+}
+#chats a{
+    border-top: 0.4px solid #7a7a7aa3;
+    border-left: none;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+}
+#chats a:last-child{
+    border-bottom: 0.4px solid #7a7a7aa3;
+}
+
+#chats a:hover{
+    background-color: #2d363e;
+}
+
+#chats a i{
+    position: absolute;
+    right: 40;
+    font-size: 0.80em;
+    color: #801212;
+}
+
+.contato figure{
+    color: #872f2f;
+    margin-left: 10px;
+}
+.semChat{
+    align-self: center;
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    color: #b5b5b5;
+    flex-direction: column;
+    height: 90%;
+    justify-content: center;
+}
+.semChat img{
+    height: 100px;
+    padding-top: 50px;
+}
+.sidenav a img{
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.sidenav img, p{
+    float: left;
+}
+.sidenav p span{
+    font-size: 0.95em;
+    color: #cacaca;
+    width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* x de fechar */
+.sidenav .closebtn {
+    position: absolute;
+    top: -4;
+    right: 25px;
+    font-size: 2em;
+    margin-left: 50px;
+    margin: 0;
+    margin-top: 8;
+    padding: 0;
+}
+.sidenav .closebtn:hover {
+    color:red;
+}
+
+footer{
+    max-width: 1000px;
+    background-color: black;
+    margin: auto;
+    margin-top: 35px;
+    padding: 20px;
+}
+footer ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+footer ul li a{
+    text-decoration: none;
+    color: #6700e0;
+    padding: 5px;
+}
+
+footer span{
+   margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9em;
+  color: #444;
+}
+
+/* o main é usado pra puxar o conteudo da página quando o side nav (de chat) é acionado */
+#main {
+    transition: margin-left .5s;
+}
+/*efeito de desfoque nas imagens de tela de fundo*/
+.background{
+    background: url(../imgs_inicial/bemvindo.svg) no-repeat top 55px center, url(../imgs_inicial/beers.svg) no-repeat top 240px left 100px, url(../imgs_inicial/beers.svg) no-repeat top 240px right 100px;
+    background-attachment: fixed;
+    background-size: 500px, 170px, 170px;
+}
+.blur{
+    transition: 1s;
+}
+.on{
+    backdrop-filter: blur(25px);
+}
+
+/* JANELA MODAL */
+.mask{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+	left:0;
+	top:0;
+	z-index:2000;
+	background-color: rgba(0,0,0,0.5);
+	display:none;
+    align-items: center;
+    justify-content: center;
+}
+.mostrar{
+    display: flex;
+}
+#boxes{
+    margin: 10px;
+    position: relative;
+	width:900px;
+    height: 500px;
+	background:transparent; 	
+	background-color:white;
+    padding: 10px;
+}
+.fechar{
+    position: absolute;
+    right: -10;
+    top: -10;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    z-index: 2000;
+    background-color: white;
+    color: #000000;
+    box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 25%);
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 800;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.info{
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.siglaSimu{
+    position: absolute;
+    top: 15;
+    left: 10;
+    width: 190px;
+    height: 190px;
+    background-color: white;
+    border-radius: 100px;
+    font-family: 'Train One', cursive;
+    color: #0d0c42;
+    font-size: 6.90em;
+    box-shadow: 1px 1px 5px #0000004a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info div{
+    margin-left: 200px;
+}
+.btnFazerSimulado{
+    position: absolute;
+    top: 440;
+    left: 60;
+    background-color: transparent;
+    color: #001153;
+    border: 2px solid #001153;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+.btnFazerSimuladoHover:hover{
+    background-color: #001153;
+    color: white;
+}
+.btnAddQuestao{
+    position: absolute;
+    right: 40;
+    background-color: transparent;
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 0 8px;
+    font-weight: 600;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.btnAddQuestao:hover{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+.btnVerQuestoes{
+    position: absolute;
+    top: 440;
+    left: 60;
+    background-color: transparent;
+    color: #001153;
+    border: 2px solid #001153;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    display: none;
+}
+.btnVerQuestoes:hover{
+    color:white;
+    background-color: #001153;
+}
+.btnAddAlternativa{
+    position: absolute;
+    top: 220;
+    right: 90;
+    background-color: transparent;
+    color: #22316a;
+    border: 2px solid #22316a;
+    border-radius: 5px;
+    padding: 0 8px;
+    font-weight: 600;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.btnAddAlternativa:hover{
+    background-color: #22316a;
+    color: white;
+}
+.btnRemoverAlternativa{
+    position: absolute;
+    top: 260;
+    right: 90;
+    background-color: transparent;
+    color: #cc2121;
+    border: 2px solid #cc2121;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-weight: 600;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.btnRemoverAlternativa:hover{
+    background-color: #cc2121;
+    color: #ffffff;
+}
+.btnDelQuestao{
+    position: absolute;
+    top: -40;
+    right: 0;
+    background-color: transparent;
+    color: #cc2121;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.26em;
+    cursor: pointer;
+}
+.btnDelQuestao:hover{
+    background-color: #cc2121;
+    color: #ffffff;
+}
+.btnEditQuestao{
+    position: absolute;
+    top: -40;
+    right: 25;
+    background-color: transparent;
+    color: #271442;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.26em;
+    cursor: pointer;
+}
+.btnEditQuestao:hover{
+    background-color: #271442;
+    color: white;
+}
+
+.btnEnviarEditQuestao{
+    position: absolute;
+    bottom: 20;
+    right: 20;
+    background-color: transparent;
+    color: #5e3183;
+    border: 2px solid #5e3183;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    display: none;
+}
+.btnEnviarEditQuestao:hover{
+    background-color: #5e3183;
+    color: white;
+}
+.questoes textarea{
+    min-height: 80px;
+    width:  540px;
+    resize: vertical;
+    padding: 0.3rem;
+    font-size: 0.90em;
+    border-radius: 0.2em;
+    border: #00000029 solid 1px;
+}
+.questoes input{
+    width: 300px;
+    margin: 10px 15px;
+}
+.btnInsQuestao{
+    position: absolute;
+    bottom: 20;
+    right: 20;
+    background-color: transparent;
+    color: #5e3183;
+    border: 2px solid #5e3183;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    display: none;
+}
+.btnInsQuestao:hover{
+    background-color: #5e3183;
+    color: white;
+}
+#animacaoFazerSimu{
+    width: 180px;
+    position: absolute;
+    top: 280;
+    left: 30;
+}
+.questoes, .formQuestoes{
+    margin-left: 240px;
+    margin-top: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    text-align: justify;
+    height: 350;
+}
+.questoes p{
+    position: relative;
+    margin-bottom: 15px;
+    margin-top: 40px;
+}
+.questoes p div{
+    margin-top: 15px;
+}
+.formQuestoes p{
+    margin: 10px 0;
+}
+.numeroQ{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.alts{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    text-align: justify;
+    height: 350;
+}
+.alts div .inputRadio{
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: inset 0 0 0 1.5px #9F9F9F;
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    transition: box-shadow 150ms cubic-bezier(.95,.15,.5,1.25);
+    cursor: pointer; 
+}
+.alts div .inputRadio:checked{
+    box-shadow: inset 0 0 0 6px #49a09d;
+}
+
+.alts div .inputRadio:focus{
+    outline: none
+}
+
+
+/* DIVS QUE APARECEM QUANDO O USUÁRIO TEM ALGUM SIMULADO FEITO */
+#secSimuFeitos{
+    display: none;
+}
+#HeaderSimuFeitos{
+    height: 50px;
+    padding-top: 525px;
+    padding-left: 90px;
+    display: flex;
+    align-items: center;
+}
+#HeaderSimuFeitos h5{
+    font-size: 1em;
+    border-bottom: 1px solid black;
+    width: 210px;
+    height: 20px;
+    margin-left: 60px;
+}
+.cardSimuConc{
+    display: flex;
+    justify-content: space-around;
+    width: 350px;
+    height: 100px;
+    margin: 2.5%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 3px rgb(0 0 0 / 18%);
+    cursor: pointer;
+    transition: 0.4s;
+    background-color: white;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;   
+} 
+#simuladosFeitos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 100px;
+}
+.cardSimuConc:hover {
+	box-shadow: 5px 5px 20px 5px rgba(49, 49, 49, 0.24), 
+	-5px -5px 20px 5px rgba(54, 54, 54, 0.274);
+}
+.tituloSimuConc{
+    font-weight: 700;
+    font-size: 1.2em;
+    width: 250px;
+}
+.descricaoSimuConc{
+    font-size: 0.95em;
+    width: 210px;
+    overflow: hidden;
+}
+.acertos{
+    align-self: center;
+    font-weight: 600;
+}
+
+.maskSimu{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+	left:0;
+	top:0;
+	z-index:2000;
+	background-color: rgba(0,0,0,0.5);
+	display:none;
+    align-items: center;
+    justify-content: center;
+}
+.mostrarSimu{
+    display: flex;
+}
+#boxSimu{
+    margin: 10px;
+    position: relative;
+    width: 300px;
+    background-color: white;
+	border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px #00000094;
+}
+#boxSimu h3{
+    text-align: center;
+    padding: 20px;
+}
+#btnEnviarSimulado{
+    margin: 10px;
+    background-color: transparent;
+    border: #0000007a solid 1px;
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-size: 0.90em;
+    cursor: pointer;
+    align-self: center;
+    width: fit-content;
+}
+#btnEnviarSimulado:hover{
+    background-color: black;
+    color: white;
+}
+#formInsAltSimu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+}
+#txtNome{
+    font-size: 0.90em;
+    padding: 0.3em;
+}
+#formInsAltSimu textarea{
+    min-height: 50px;
+    resize: vertical;
+    padding: 0.3rem;
+    font-size: 0.90em;
+    border-radius: 0.2em;
+    border: #00000029 solid 1px;
+}
+#formInsAltSimu p{
+    align-self: start;
+    padding: 10px 0;
+}
+.fecharSimu{
+    position: absolute;
+    right: -10;
+    top: -10;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    z-index: 2000;
+    background-color: white;
+    color: #000000;
+    box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 25%);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+/*PAG SIMULADO ESTILO */
+#siglatl2{
+    position: relative;
+    margin-left: 10px;
+    margin-top: 45px;
+}
+#infotl2{
+    height: 150px;
+    margin-top: 45px;
+}
+#infotl2 div{
+    margin-left: 10px;
+}
+.fa-chevron-left{
+    margin-left: 30;
+    font-size: 2.5em;
+    color: black;
+    text-decoration: none;
+}
+.fa-chevron-left:hover{
+   color: purple;
+}
+.conteudoSimulados{
+    display: flex;
+    flex-direction: column;
+}
+.formQuestoes{
+    height: auto;
+    width: 65%;
+} 
+
+#btnConcluirSimulado{
+    background-color: transparent;
+    color: #001153;
+    border: 2px solid #001153;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    align-self: center;
+    width: fit-content;
+}
+.btnHoverEffect:hover{
+    background-color: #001153;
+    color: white;
+    font-weight: 400;
+}
+#btnConcluirSimulado i{
+    margin-right: 10px;
+}
+.radioBoxes{
+    margin: 10px 0px;
+}
+.radioBoxes label{
+    display: inline-flex;
+    padding: 6px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+    -webkit-tap-highlight-color: transparent;
+}  
+.LblhoverEffect:hover, .LblhoverEffect:focus-within{
+    background-color: rgba(184, 184, 184, 0.384);
+}
+.radioBoxes label span{
+    line-height: 20px;
+    padding: 0 8px;
+}
+.radioBoxes input{
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: inset 0 0 0 1.5px #9F9F9F;
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    transition: box-shadow 150ms cubic-bezier(.95,.15,.5,1.25);
+    pointer-events: none;
+}
+.radioBoxes input:checked{
+    box-shadow: inset 0 0 0 6px #49a09d;
+}
+
+.radioBoxes input:focus{
+    outline: none
+}
+#resultado{
+    margin-top: 40px;
+    text-align: center;
+}
+#ranking{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#ranking .rankingConteudo{
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    box-shadow: 0 0 20px rgb(0 0 0 / 32%);
+}
+#ranking h2{
+    font-size: 1.2em;
+    width: 65%;
+    margin-top: 30px;
+}
+#ranking table{
+    margin: 50px 0;
+    width: 400px;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+#ranking table tr:hover{
+    background-color: rgba(255,255,255,0.3);
+}
+#ranking table tr th, #ranking table tr td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+}
+#ranking table tr th{
+    background-color: #55608f;
+}
+#ranking table tr td{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.img{
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+#ranking table tr .nome{
+    width: 0;
+    padding: 0;
+}
+.tituloUsuario{
+    text-align: end;
+}
+#ranking table .tdImg{
+    text-align: end;
+}
+
+/*POPOVER*/
+#ranking table tr{
+    position: relative;
+}
+#ranking table tr #popoverUsuTh{
+    padding: 0;
+}
+#ranking table tr #popoverUsu{
+    position: absolute;
+    right: 400;
+    width: 0;
+    height: 0;
+    background-color: white;
+    color:black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 14px 0px #00000061;
+    transform: translate(10px, 0);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+#ranking table tr:hover #popoverUsu{
+    visibility: visible;
+    transform: translate(-10px, 0);
+    width: 250px;
+    height: 120px;
+    opacity: 1;
+}
+
+#popoverUsu div{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+}
+.popDescricao{
+    padding-left: 5px;
+    text-align: left;
+    font-size: 0.9em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btnAbrirChat{
+    margin-top: 25px;
+    background-color: transparent;
+    color: #5e3384;
+    border: 2px solid #5e3384;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    width: 200px;
+    align-self: center;
+}
+.btnAbrirChat:hover{
+    background-color: #5e3384;
+    color: white;
+}
+
+.conversa{
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    height: 475px;
+    width: 350;
+    margin-left: 290px;
+    box-shadow: 3px 3px 11px 0px #00000052;
+    transition: 0.5s;
+    visibility: hidden;
+    z-index: 5;
+    border-radius: 5px;
+    border-end-end-radius: 0;
+}
+
+#fecharConversa{
+    position: absolute;
+    top: -5;
+    right: 25px;
+    font-size: 36px;
+    margin: 0;
+    margin-top: 8;
+    padding: 0;
+    cursor: pointer;
+}
+#fecharConversa:hover {
+    color:red;
+}
+.infoContato{
+    background: linear-gradient(45deg, #34928f, #5f2c82);
+    height: 40px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 5px 15px;
+    border-bottom: 1px solid #929292;
+    border-left: 1px solid #929292;
+    border-radius: 5px;
+    border-end-end-radius: 0;
+}
+
+.infoContato p{
+    margin-left: 20px;
+}
+
+.fotousuario{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#boxEnviarMsg{
+    background: black;
+    position: absolute;
+    bottom: 0;
+    width: inherit;
+    height: 30px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#inputMsg{
+    height: inherit;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 5px;
+    width: 75%;
+}
+
+#btnEnviarMsg{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.3em;
+    height: inherit;
+    cursor: pointer;
+}
+#btnEnviarMsg:hover{
+    color: #a5a5a5;
+}
+
+#boxMsgs{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: white;
+    height: 78%;
+    display: flex;
+    flex-direction: column;
+}
+.msg{
+    height: 40px;
+    margin: 10px;
+    padding: 5px;
+    /*colocar a div pra direita ou pra esquerda: align-self: flex-end; ou align-self: flex-start;*/
+}
+.msg p{
+    background-color: #00ff6f;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.95em;
+}
+
+.maskPerfil{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left:0;
+    top:0;
+    z-index:2000;
+    background-color: rgb(0 0 0 / 16%);
+    display:none;
+    align-items: center;
+    justify-content: center;
+}
+.mostrarPerfil{
+    display: flex;
+}
+.boxPerfil{
+    margin: 10px;
+    position: relative;
+    width: 300px;
+    background-color: #121d27;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px #00000094;
+    color: #dedede;
+}
+.boxPerfil label{
+    padding-top: 3px;
+    padding-left: 3px;
+    font-size: 0.95em;
+    color: #868686;
+}
+.infos{
+    padding-bottom: 10px;
+    padding-left: 3px;
+    font-weight: 100;
+    font-size: 1em;
+}
+.fecharPerfil{
+    position: absolute;
+    right: -10;
+    top: -10;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    z-index: 2000;
+    background-color: #1d2934;
+    color: white;
+    box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 25%);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+#usuFoto{
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+    padding: 10px;
+    border-radius: 50%;
+    align-self: center;
+}
+#usuDataCadastro{
+    position: absolute;
+    bottom: 0;
+    right: 10;
+    color: #5f5f5f;
+    font-size: 0.85em;
+}
+#usuDescricao{
+    padding-bottom: 30px;
+}
+#btnEditPerfil{
+    position: absolute;
+    right: 30;
+    top: 120;
+    color: white;
+    cursor: pointer;
+}
+#btnEditPerfil:hover{
+    opacity: 0.7;
+}
+
+/*JANELA MODAL DE EDIT INFO PERFIL*/
+.maskPerfilEdit{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left:0;
+    top:0;
+    z-index:2000;
+    background-color: rgb(0 0 0 / 16%);
+    display:none;
+    align-items: center;
+    justify-content: center;
+}
+.mostrarPerfilEdit{
+    display: flex;
+}
+.boxPerfilEdit{
+    margin: 10px;
+    position: relative;
+    background-color: #121d27;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px #00000094;
+    color: #dedede;
+}
+.fecharPerfilEdit{
+    position: absolute;
+    right: -10;
+    top: -10;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    z-index: 2000;
+    background-color: #1d2934;
+    color: white;
+    box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 25%);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.formPerfilEdit{  
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 250px;
+}
+
+.formPerfilEdit p{
+    padding-top: 10px;
+    padding-bottom: 5px;
+} 
+.formPerfilEdit input{
+    background-color: #101a23;
+    font-size: 0.95em;
+    box-shadow: -1px 0px 1px 2px #3d3d3d94;
+    color: #cdcdcd;
+    outline: none;
+}
+.formPerfilEdit textarea{
+    background-color: #101a23;
+    font-size: 0.95em;
+    box-shadow: -1px 0px 1px 2px #3d3d3d94;
+    border-color: black;
+    color: #cdcdcd;
+    outline: none;
+}
+#btnEnviarEditPerfil{
+    font-size: 0.95em;
+    align-self: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+#btnEnviarEditPerfil:hover{
+    background-color: #1e2a34;
+}
+
+#div-foto{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+}
+#div-foto figure{
+    align-self: center;
+    position: relative;
+}
+#imgFoto{
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#labelFoto{
+    font-size: 1.1em;
+    cursor: pointer;
+    color: #fff;
+    background-color: #101a23;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 5;
+}
+input[type='file'] {
+    display: none
+}
+
+
+/*personalização scrollbar*/
+::-webkit-scrollbar{
+    background: #eaeaea;
+    border-radius: 20px;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #74068f;
+    border-radius: 20px;
+}
+/* pra se adaptar pra tela menor */
+@media screen and (max-width: 768px) {
+    .sidenav a {
+        font-size: 18px;
+    }
+    .formQuestoes{
+        margin-top: 45px;
+        width: 90%;
+        margin-left: 25px;
+    }
+    #simuladosFeitos{
+        margin-left: 0;
+        justify-content: center;
+    }
+    #ranking table tr #popoverUsu{
+        top: -130;
+        left: 60;
+    }
+}
