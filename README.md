@@ -3,7 +3,7 @@
 
 
 * Projeto feito com o objetivo de integrar vestibulandos do ENEM 
-* É uma plataforma de simulados, feito usando propostas de gamificação, onde os vestibulandos podem realizar simulados, verem rakinkg de acertos dos outros usuários, entrar em contato com esses usuários e aprenderem a partir de uma colaboração mútua.
+* É uma plataforma de simulados, feito usando propostas de gamificação, onde os vestibulandos podem realizar simulados, podem ver rakinkg de acertos dos outros usuários, entrar em contato com esses usuários por chat e também aprender a partir de uma colaboração mútua.
 
 Algumas imagens do sistema (neste caso as screenshots foram feitas com o login de um dos administradores do sistema):
 
