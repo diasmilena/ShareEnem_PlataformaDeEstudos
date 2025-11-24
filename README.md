@@ -4,7 +4,7 @@
 
 * Projeto feito com o objetivo de integrar vestibulandos do ENEM 
 * É uma plataforma de simulados, feito usando propostas de gamificação, onde os vestibulandos podem realizar simulados, podem ver rakinkg de acertos dos outros usuários, entrar em contato com esses usuários por chat e também aprender a partir de uma colaboração mútua.
-* Feito com JavaScript
+* Feito com JavaScript e PHP. Chat desenvolvido com WebSockets a partir da biblioteca Ratchet.
 
 Algumas imagens do sistema (neste caso as screenshots foram feitas com o login de um dos administradores do sistema):
 
